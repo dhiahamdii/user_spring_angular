@@ -18,6 +18,16 @@ import { DashbordTrgComponent } from './dashbord-trg/dashbord-trg.component';
 import { TrgPlanActionComponent } from './trg-plan-action/trg-plan-action.component';
 import { ChatComponent } from './chatc/chat.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import {HomeFrontComponent} from "./FrontOffice/home-front/home-front.component";
+import {RegleUpdateComponent} from "./regle-update/regle-update.component";
+import {LoiReglesComponent} from "./loi-regles/loi-regles.component";
+import {RegleComponent} from "./regle/regle.component";
+import {LastLoiComponent} from "./last-loi/last-loi.component";
+import {DocLoisComponent} from "./doc-lois/doc-lois.component";
+import {DocUpdateComponent} from "./doc-update/doc-update.component";
+import {LoiUpdateComponent} from "./loi-update/loi-update.component";
+import {LoiComponent} from "./loi/loi.component";
+import {DocComponent} from "./doc/doc.component";
 
 const routes: Routes = [
   {path : 'register' , component : RegisterComponent} ,
@@ -39,6 +49,54 @@ const routes: Routes = [
   {path : 'planAction' , component : TrgPlanActionComponent },
   {path : 'chat' , component : ChatComponent },
   {path : 'reclamation' , component : ReclamationComponent },
+  {
+    path: "doc",
+    component:  DocComponent
+  }
+  ,
+  {
+    path: "loi",
+    component:  LoiComponent
+  }
+  ,
+  {
+    path: "loi/:id",
+    component:  LoiUpdateComponent
+  }
+  ,
+  {
+    path: "doc/:id",
+    component:  DocUpdateComponent
+  } ,
+  {
+    path: "LastLoi",
+    component:  LastLoiComponent
+  }
+  ,
+  {
+    path: "loidoc/:id",
+    component:  DocLoisComponent
+  }
+  ,
+  {
+    path: "regle",
+    component:  RegleComponent
+  }
+  ,
+  {
+    path: "regleLois/:id",
+    component:  LoiReglesComponent
+  }
+  ,
+  {
+    path: "regle/:id",
+    component:  RegleUpdateComponent
+  }
+  ,
+  {
+    path: "",
+    component:  HomeFrontComponent
+  }
 
 
 

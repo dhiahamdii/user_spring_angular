@@ -103,7 +103,7 @@ export class TopWigdetsComponent {
 
   getCurrentTemperature() {
 
-    const apiUrl = `${environment.apiUrl2}/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${this.apiKey}&units=metric`;
+    const apiUrl = `${environment.apiUrl}/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${this.apiKey}&units=metric`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
       this.temperature = data.main.temp;

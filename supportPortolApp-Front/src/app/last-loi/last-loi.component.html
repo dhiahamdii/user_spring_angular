@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="container">
+                    <h5 class="card-title">Loi</h5>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <!-- Loop through each Loi -->
+                        <div class="col" *ngFor="let loi of Lois">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ loi.name }}</h5>
+                                    <p class="card-text">Numero: {{ loi.numero }}</p>
+                                    <button (click)="updateLoi(loi.id)" class="btn btn-primary">Update</button>
+                                    <button (click)="deleteLoi(loi.id)" class="btn btn-danger">Delete</button>
+                                    <button (click)="loi(loi.id)" class="btn btn-info">View Regles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -42,6 +42,15 @@ import { ChartModule } from 'angular-highcharts';
 import { TrgByProduitComponent } from './trg-by-produit/trg-by-produit.component';
 import { TrgByShiftComponent } from './trg-by-shift/trg-by-shift.component';
 import {CommonModule} from "@angular/common";
+import {LastLoiComponent} from "./last-loi/last-loi.component";
+import {LoiReglesComponent} from "./loi-regles/loi-regles.component";
+import {DocLoisComponent} from "./doc-lois/doc-lois.component";
+import {LoiComponent} from "./loi/loi.component";
+import {DocComponent} from "./doc/doc.component";
+import {RegleComponent} from "./regle/regle.component";
+import {RegleUpdateComponent} from "./regle-update/regle-update.component";
+import {DocUpdateComponent} from "./doc-update/doc-update.component";
+import {LoiUpdateComponent} from "./loi-update/loi-update.component";
 
 
 
@@ -63,6 +72,15 @@ import {CommonModule} from "@angular/common";
     SidenavigationComponent,
     AcceuilPageComponent,
     ChatComponent,
+    LoiUpdateComponent,
+    DocUpdateComponent,
+    RegleUpdateComponent,
+    RegleComponent,
+    DocComponent,
+    LoiComponent,
+    DocLoisComponent,
+    LoiReglesComponent,
+    LastLoiComponent,
     ReclamationComponent,
 
     MainComponent,

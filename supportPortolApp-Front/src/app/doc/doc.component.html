@@ -1,0 +1,198 @@
+<style>
+    h1 {
+        margin-left: 300px; /* Add an empty space on the left side of the title */
+    }
+
+    .table-container {
+        padding-left: 300px; /* Add an empty space on the left side of the table */
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center; /* Center the content of the table */
+    }
+
+    .table th {
+        text-align: right; /* Center the content of the table header */
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+  <!-- ============================================================== -->
+  <!-- Main wrapper - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  <div
+    id="main-wrapper"
+    data-layout="vertical"
+    data-navbarbg="skin5"
+    data-sidebartype="full"
+    data-sidebar-position="absolute"
+    data-header-position="absolute"
+    data-boxed-layout="full"
+    class="content-container"
+  >
+
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+      <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+          <h4 class="page-title"><a href="Docback">Liste</a></h4>
+          <div class="ms-auto text-end">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Library
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-12">
+
+          <div class="card">
+            <div class="container">
+                <h5 class="card-title">Documentation</h5>
+
+                <div class="table-responsive">
+
+                  <table
+                    id="zero_config"
+                    class="table table-striped table-bordered"
+                  >
+                    <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Label</th>
+
+                    <th>update</th>
+                    <th>supprimer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Doc of Docs|paginate:{
+
+                      itemsPerPage: tableSize,
+currentPage: page,
+totalItems : count }; let i=index ">
+                    <td>{{Doc.type}}</td>
+                    <td>{{Doc.label}}</td>
+                       <td>   <button (click)="updateDoc(Doc.id)" type="button" class="btn btn-primary m-t-15 waves-effect">update</button></td>
+                       <td><button (click)="deleteDoc(Doc.id)" type="button" class="btn
+                        btn-prima ry">DELETE</button></td>
+                        <td><button (click)="loi(Doc.id)" type="button" class="btn
+                            btn-prima ry">Lois</button></td>
+                  </tr>
+                </tbody>
+               </table>
+
+                <div>
+                  <pagination-controls
+  previousLabel="Prev"
+  nextLabel="Next"
+  (pageChange)="onTableDataChange (Doc)" ></pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+
+
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+    <div class="body">
+        <form class="form-horizontal">
+            <div class="row clearfix">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                    <label for="first_name">fichier</label>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="name" [(ngModel)]="Doc.fichier" type="file" id="name" class="form-control" placeholder="Enter your first name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                    <label for="last_name">Label </label>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="location" [(ngModel)]="Doc.label" type="text" id="location" class="form-control" placeholder="Label">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                    <label for="password_2">Type</label>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="text" [(ngModel)]="Doc.type" type="text" id="dsd" class="form-control" placeholder="Type">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                    <button (click)="addDoc()" type="button" class="btn btn-primary m-t-15 waves-effect">Add</button>
+                </div>
+            </div>
+        </form>
+
+      </div>
+
+</div>
+
+
+  </div>

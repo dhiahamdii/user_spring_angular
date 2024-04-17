@@ -1,0 +1,190 @@
+<style>
+    h1 {
+        margin-left: 300px; /* Add an empty space on the left side of the title */
+    }
+
+    .table-container {
+        padding-left: 300px; /* Add an empty space on the left side of the table */
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center; /* Center the content of the table */
+    }
+
+    .table th {
+        text-align: right; /* Center the content of the table header */
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+</style>
+ 
+  <!-- ============================================================== -->
+  <!-- Main wrapper - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  <div
+    id="main-wrapper"
+    data-layout="vertical"
+    data-navbarbg="skin5"
+    data-sidebartype="full"
+    data-sidebar-position="absolute"
+    data-header-position="absolute"
+    data-boxed-layout="full"
+    class="content-container"
+  >
+   
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+      <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+          <h4 class="page-title"><a href="Regleback">Liste</a></h4>
+          <div class="ms-auto text-end">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Library
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-12">
+          
+          <div class="card">
+            <div class="container">
+                <h5 class="card-title">Regleumentation</h5>
+                <script type="text/javascript">
+                  function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'es,fr,de,ja,ko' }, 'google_translate_element');
+                  }
+              </script>
+              <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              <div id="google_translate_element"></div>
+                <div class="table-responsive">
+                    
+                  <table
+                    id="zero_config"
+                    class="table table-striped table-bordered"
+                  >
+                    <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Contenu</th>
+                  
+                    <th>update</th>
+                    <th>supprimer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Regle of Regles|paginate:{
+
+                      itemsPerPage: tableSize,
+currentPage: page,
+totalItems : count }; let i=index ">
+                    <td>{{Regle.nom}}</td>
+                    <td>{{Regle.contenu}}</td> 
+                       <td>   <button (click)="updateRegle(Regle.id)" type="button" class="btn btn-primary m-t-15 waves-effect">update</button></td>
+                              <td><button (click)="deleteRegle(Regle.id)" type="button" class="btn
+                                btn-prima ry">DELETE</button></td>
+                  </tr>
+                </tbody>
+               </table>
+               
+                <div>
+                  <pagination-controls
+  previousLabel="Prev"
+  nextLabel="Next"
+  (pageChange)="onTableDataChange (Regle)" ></pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+   
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+    <div class="body">
+        <form class="form-horizontal">
+          
+            <div class="row clearfix">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                    <label for="last_name">nom </label>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="location" [(ngModel)]="Regle.nom" type="text" id="location" class="form-control" placeholder="nom regle ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row clearfix">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                    <label for="password_2">contenu </label>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="text" [(ngModel)]="Regle.contenu" type="text" id="dsd" class="form-control" placeholder="contenu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row clearfix">
+                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                    <button (click)="addRegle()" type="button" class="btn btn-primary m-t-15 waves-effect">Add</button>
+                </div>
+            </div>
+        </form>
+        
+      </div>
+
+</div>
+
+
+  </div>
+  
