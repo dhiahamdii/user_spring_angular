@@ -1,0 +1,29 @@
+
+                    <div>
+                        <img #image1 class="petite-image" src="https://www.sagemcom.com/sites/default/files/2021-07/Logo%20Sagemcom_1.jpg">
+                        <button (click)="shareOnFacebook(image1.getAttribute('src'), 
+                                                                            'nom de l\'image 1', 
+                                                                            'Description de l\'image 1')" class="btn btn-theme">
+                        Partager sur Facebook</button>
+                    </div>
+                    <div>
+                        <img #image2 class="petite-image" src="https://th.bing.com/th/id/R.7b528d6309ee84dc0d8fbffef7cc9347?rik=8wk4MSW3GZq%2f7g&riu=http%3a%2f%2fwww.psdgraphics.com%2ffile%2fuser-icon.jpg&ehk=4QSu%2bJSvX%2bN2ZID%2fIjxhYSQSPXnkuSk%2bZ0gxqdIQWSU%3d&risl=&pid=ImgRaw&r=0" alt="imageToShare">
+                        <button (click)="shareOnFacebook(image2.getAttribute('src'), 
+                                                        'Nom de l\'image 2', 
+                                                        'Description de l\'image 2')" class="btn btn-theme">
+                        Partager sur Facebook</button>
+                    </div>
+                    
+                    
+        <button type="button" class="btn btn-info"
+            socialshare
+            socialshare-provider="facebook"
+            socialshare-type="feed"
+            socialshare-via="MY KEY"
+            socialshare-quote="this is the quote"
+            socialshare-display="page"
+            socialshare-url="https://www.sagemcom.com/sites/default/files/2021-07/Logo%20Sagemcom_1.jpg" >
+
+            <span class="fas fa-facebook ">facebook</span>
+
+        </button>

@@ -1,0 +1,41 @@
+<div class="widget-container">
+
+
+
+
+
+    <div class="widget grey">
+        <i class="fas fa-clock" style="font-size: 2em; margin-left: 20px; margin-right: 50px;"></i>
+      <div class="value">
+        <div class="top">{{ formatDate(currentDateTime) }}</div>
+        <div class="bottom"></div>
+      </div>
+    </div>
+
+    <div class="widget green">
+      <i class="fa6-solid--user-group" style="font-size: 2em; color: #ededed;margin-left: 20px; margin-right: 50px; "></i>
+    <div class="value">
+      <div class="top">Users {{ totalUsers }}</div>
+      <div class="bottom">Active Users: {{ activeUsers }}</div>
+    </div>
+  </div>
+
+    <div class="widget red">
+        <i class="fas fa-angle-double-up" style="font-size: 2.5em; margin-left: 20px; margin-right: 50px; color: #ffffff;"></i>
+      <div class="value">
+        <div class="top">Blocked User</div>
+        <div class="bottom">{{blockedUser}}</div>
+      </div>
+    </div>
+
+    <div class="widget blue" routerLink="/planAction">
+      <i class="fas fa-calendar-check" style="font-size: 2em; margin-left: 20px; margin-right: 50px;"></i>
+      <div class="value">
+        <div class="top">{{ totalReclamation }}</div>
+        <div class="bottom">Total Reclamation</div>
+      </div>
+    </div>
+
+
+
+  </div>

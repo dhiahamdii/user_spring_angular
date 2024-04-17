@@ -1,0 +1,281 @@
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="./../../assets/img/data-governance.jpg" alt="Logo" class="logo-img">
+                    COCKPIT
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                     aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="header-btn" id="form-open" >Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-info font-weight-bold-bold" >ONE platform for any data challenge</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-black mb-5">Accelerate your organization’s business initiatives with trusted, high-quality, governed data.  <br> « The solutions your team needs ».</p>
+                        <a class="btn btn-info btn" id="click-form-open">Login</a>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+         <!-- Form -->
+    <section class="home">
+        <div class="form_container">
+          <i class="uil uil-times form_close"></i>
+          <!-- Login  -->
+          <div class="form login_form">
+            <form action="#" #loginForm="ngForm" (ngSubmit) = "onLogin(loginForm.value)" >
+              <h2>Login</h2>
+
+              <div class="input_box">
+                <input type="text" placeholder="Enter your username" name="username" ngModel #usernameInput="ngModel" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Enter your password" name="password" ngModel #passwordInput="ngModel" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+
+              <div class="option_field">
+                <span class="checkbox">
+                  <input type="checkbox" id="check" />
+                  <label for="check">Remember me</label>
+                </span>
+                <a data-toggle="modal" data-target="#addReclamationModall" class="forgot_pw"href="#">Forgot password?</a>
+              </div>
+
+              <button class="button" [disabled]="loginForm.invalid" >Login Now</button>
+
+              <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+            </form>
+          </div>
+
+          <!-- Signup -->
+          <div class="form signup_form">
+            <form action="#"  #registerForm="ngForm" (ngSubmit) = "onRegister(registerForm.value)">
+              <h2>Signup</h2>
+
+              <div class="input_box">
+                <input type="text" name="firstName" ngModel #firstNameInput="ngModel" required placeholder="First Name"/>
+                <i class="uil uil-user-circle email"></i>
+              </div>
+              <div class="input_box">
+                <input type="text" name="lastName" ngModel #lastNameInput="ngModel" required  placeholder="Last Name" />
+                <i class="uil uil-user-circle email"></i>
+              </div>
+              <div class="input_box">
+                <input type="text" name="username" ngModel #usernameInput="ngModel" required placeholder="Username" />
+                <i class="uil uil-user-circle email"></i>
+              </div>
+              <div class="input_box">
+                <input type="email"  name="email" ngModel #emailInput="ngModel" required placeholder="Enter your Email" />
+                <i class="uil uil-user-circle email"></i>
+                <!--<i class="uil uil-envelope-alt email"></i>-->
+              </div>
+
+              <button class="button" type="submit" [disabled]="registerForm.invalid ">Signup Now</button>
+
+              <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0"> Nos Services :</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Built for the business and technical user</h3>
+                            <p class="text-muted mb-0">Companies thrive best when the technology and business goals are aligned. That is why we designed our product in a way that business and technical people can work seamlessly together.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">We are a pleasure to work with</h3>
+                            <p class="text-muted mb-0">We are immensely proud of the consistent praise from our customers, who enjoy working with our team. We are committed to ensuring it stays that way.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Ready to scale across all systems</h3>
+                            <p class="text-muted mb-0">Ataccama ONE is technology agnostic and heavily automated, enabling data quality operations that scale to your whole data landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Contactez-nous !</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Prêt à démarrer votre prochain projet avec nous ? Envoyez-nous un message et nous vous répondrons dans les plus brefs délais !</p>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                     <!-- <form #reclamationForm="ngForm" (ngSubmit)="addReclamation(reclamationForm)">
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" name="email" class="form-control" ngModel required>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="descrRec">Description Reclamation</label>
+                          <textarea id="descrRec" name="descrRec" class="form-control" ngModel required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Reclamation</button>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal"  id="new-Poste-close">Close</button>
+                        </div>
+                      </form>-->
+                        <!--<form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+
+                        </form>-->
+                      <br><br><br><br>
+                      <div class="d-flex justify-content-center">
+                      <button   type="button" class="btn btn-info" data-toggle="modal" data-target="#addReclamationModal">
+                        <i class="bi bi-newspaper"></i>  &nbsp; Contact administration
+                      </button>
+                      </div>
+                      <div class="modal fade bd-example-modal-lg" id="addReclamationModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" >
+                          <div class="modal-content">
+                            <div class="modal-header">
+
+                              <div class="col text-center">
+                                <h3 class="modal-title" id="exampleModalLabel">Forget password ?? </h3>
+                              </div>
+                            </div>
+
+                            <div class="modal-body">
+                              <form #reclamationForm="ngForm" (ngSubmit)="addReclamation(reclamationForm)">
+                                <div class="form-group">
+                                  <label for="email">Email</label>
+                                  <input type="email" id="email" name="email" class="form-control" ngModel required>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="descrRec">Description Reclamation</label>
+                                  <textarea id="descrRec" name="descrRec" class="form-control" ngModel required></textarea>
+                                </div>
+                                <div class="d-flex justify-content-center">
+
+                                  <button type="submit" class="btn btn-info">Add Reclamation</button>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal"  id="new-Poste-close">Close</button>
+                                  <!--  <button type="button" type="button" (click)="savePoste()" [disabled]="newLigneForm.invalid" class="btn btn-primary">Save</button>-->
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade bd-example-modal-lg" id="addReclamationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" >
+                          <div class="modal-content">
+                            <div class="modal-header">
+
+                              <div class="col text-center">
+                              <h3 class="modal-title" id="exampleModalLabel">new Reclamation: </h3>
+                            </div>
+                            </div>
+
+                            <div class="modal-body">
+                              <form #reclamationForm="ngForm" (ngSubmit)="addReclamation(reclamationForm)">
+                                <div class="form-group">
+                                  <label for="email">Email</label>
+                                  <input type="email" id="email" name="email" class="form-control" ngModel required>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="descrRec">Description Reclamation</label>
+                                  <textarea id="descrRec" name="descrRec" class="form-control" ngModel required></textarea>
+                                </div>
+                                <div class="d-flex justify-content-center">
+
+                                <button type="submit" class="btn btn-info">Add Reclamation</button>
+                                  </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal"  id="new-Poste-close">Close</button>
+                                  <!--  <button type="button" type="button" (click)="savePoste()" [disabled]="newLigneForm.invalid" class="btn btn-primary">Save</button>-->
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                        <div>+(216) 99 999 999</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!--Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright : 2024 - © Data-Gov 2024</div></div>
+        </footer>
+
+
+    </body>
+
